@@ -1,205 +1,226 @@
-<!DOCTYPE html>
-<!-- saved from url=(0108)http://bdc.linyi.gov.cn/realestate/app/zsewm/qx/viewZDTFHT?zsid=ced3065955c549abb58d13051279a188&qhmc=BDCLL# -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+﻿<!DOCTYPE html>
+<html>
 
-<title>查看分层分户图/宗地图</title>
-<!-- JQuery -->
-<script type="text/javascript" src="./查看分层分户图_宗地图_files/jquery-1.11.3.js.下载"></script>
-<!-- easyui 1.4 -->
-<script type="text/javascript" src="./查看分层分户图_宗地图_files/jquery.easyui.min.js.下载"></script>
-<script type="text/javascript" src="./查看分层分户图_宗地图_files/easyui-lang-zh_CN.js.下载"></script>
-<link rel="stylesheet" type="text/css" href="./查看分层分户图_宗地图_files/easyui.css">
-<link rel="stylesheet" type="text/css" href="./查看分层分户图_宗地图_files/icon.css">
-	
-<link rel="stylesheet" type="text/css" href="./查看分层分户图_宗地图_files/layui.css">
+<head>
+	<meta charset="UTF-8">
+	<title>查看分层分户图/宗地图</title>
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<!-- easyui 1.4 -->
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/easyui-lang-zh_cn.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="css/icon.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/layui.css" />
 </head>
+
 <body>
 
-	<input type="text" id="zsid" value="ced3065955c549abb58d13051279a188" style="display: none">
-	
+	<input type="text" id="zsid" value="ced3065955c549abb58d13051279a188" style="display: none" />
+
 	<div>
 		<div style="padding: 5px; background: #fafafa; border: 1px solid #ccc" align="center">
-			<a href="http://bdc.linyi.gov.cn/realestate/app/zsewm/qx/viewZDTFHT?zsid=ced3065955c549abb58d13051279a188&amp;qhmc=BDCLL#" class="layui-btn layui-btn-primary" style="background: rgb(250, 250, 250); width: 30%; height: 100px; padding-top: 30px;" onclick="showFht()" id="btnFHT"><font size="20px">分户图</font></a>
-			<a href="http://bdc.linyi.gov.cn/realestate/app/zsewm/qx/viewZDTFHT?zsid=ced3065955c549abb58d13051279a188&amp;qhmc=BDCLL#" class="layui-btn layui-btn-primary" style="width: 30%; height: 100px; padding-top: 30px; background: rgb(250, 250, 250);" onclick="showZdt()" id="btnZDT"><font size="20px">宗地图</font></a>
-			<a href="http://bdc.linyi.gov.cn/realestate/app/zsewm/qx/viewZDTFHT?zsid=ced3065955c549abb58d13051279a188&amp;qhmc=BDCLL#" class="layui-btn layui-btn-primary" style="width: 30%; height: 100px; padding-top: 30px; background: rgb(239, 68, 68);" onclick="showQszt()" id="btnQSZT"><font size="20px">权属状态</font></a>
+			<a href="#" class="layui-btn layui-btn-primary"
+				style="background:#EF4444 ;width: 30%;height: 100px;padding-top: 30px" onclick="showFht()" id="btnFHT">
+				<font size="20px">分户图</font>
+			</a>
+			<a href="#" class="layui-btn layui-btn-primary" style="width: 30%;height: 100px;padding-top: 30px"
+				onclick="showZdt()" id="btnZDT">
+				<font size="20px">宗地图</font>
+			</a>
+			<a href="#" class="layui-btn layui-btn-primary" style="width: 30%;height: 100px;padding-top: 30px"
+				onclick="showQszt()" id="btnQSZT">
+				<font size="20px">权属状态</font>
+			</a>
 		</div>
-		
-		<div id="fht" align="center" style="padding: 5px; display: none;"><img src="./查看分层分户图_宗地图_files/getImg"><br><br><img src="./查看分层分户图_宗地图_files/getImg(1)"><br><br></div>
-		
-		<div id="zdt" align="center" style="padding: 5px; display: none;"><img src="./查看分层分户图_宗地图_files/getImg(2)"><br><br></div>
-		<div id="qszt" align="center" style="padding: 5px; display: block;">
+
+		<div id="fht" align="center" style="padding: 5px">
+               <img src="./images/fenhutu.jfif" alt="" srcset="">
+               <img src="./images/fenhutu2.jfif" alt="" srcset="">
+		</div>
+
+		<div id="zdt" align="center" style="padding: 5px;display: none">
+			<img src="./images/getImg.jfif" alt="" srcset="">
+		</div>
+		<div id="qszt" align="center" style="padding: 5px;display: none">
 			<table class="layui-table" style="text-align: center;">
-			<tbody><tr>
-				<td rowspan="9">房屋状况</td>
-			</tr>
-			<tr>
-				<td>权证号</td>
-				<td colspan="3" class="bdcqzh">鲁(2021)兰陵县不动产权第0006560号</td>
-			</tr>
-			<tr>
-				<td>权利人</td>
-				<td colspan="3" class="qlr">贾国庆</td>
-			</tr>
-			<tr>
-				<td>共有方式</td>
-				<td colspan="3" class="gyfs">单独所有</td>
-			</tr>
-			<tr>
-				<td>坐  落</td>
-				<td colspan="3" class="zl">兰陵县城区顺和路西段南侧东方君御A3幢4层1单元-402等2处</td>
-			</tr>
-			<tr>
-				<td>用  途</td>
-				<td colspan="3" class="yt">储藏室,住宅</td>
-			</tr>
-			<tr>
-				<td>建筑面积</td>
-				<td colspan="3" class="jzmj">152.62</td>
-			</tr>
-			<tr>
-				<td>抵押登记</td>
-				<td class="dydj">是</td>
-				<td>查封登记</td>
-				<td class="cfdj">否</td>
-			</tr>
-			<tr>
-				<td>异议登记</td>
-				<td class="yydj">否</td>
-				<td>限制登记</td>
-				<td class="xzdj">否</td>
-			</tr>
-			<tr>
-				<td>证书是否有效</td>
-				<td colspan="3" class="sfyx">有效</td>
-			</tr>
-			<tr>
-				<td rowspan="3">土地状况</td>
-			</tr>
-			<tr>
-				<td>权利性质</td>
-				<td colspan="3" class="qlxz">出让</td>
-			</tr>
-			<tr>
-				<td>使用期限</td>
-				<td colspan="3" class="syqx">2018-01-22至2088-01-21</td>
-			</tr>
-			</tbody></table>
-			<p style="font-size: 21px; float: right;">查询时间：<label class="year"> 2023 </label>年<label class="month"> 1 </label>月<label class="day"> 27 </label>日
-			<label class="hours"> 23 </label>时<label class="minutes"> 3 </label>分<label class="milliseconds"></label>秒
+				<tbody>
+					<tr>
+						<td rowspan="9">房屋状况</td>
+					</tr>
+					<tr>
+						<td>权证号</td>
+						<td colspan="3" class="bdcqzh">鲁(2021)兰陵县不动产权第0006560号</td>
+					</tr>
+					<tr>
+						<td>权利人</td>
+						<td colspan="3" class="qlr">贾国庆</td>
+					</tr>
+					<tr>
+						<td>共有方式</td>
+						<td colspan="3" class="gyfs">单独所有</td>
+					</tr>
+					<tr>
+						<td>坐 落</td>
+						<td colspan="3" class="zl">兰陵县城区顺和路西段南侧东方君御A3幢4层1单元-402等2处</td>
+					</tr>
+					<tr>
+						<td>用 途</td>
+						<td colspan="3" class="yt">储藏室,住宅</td>
+					</tr>
+					<tr>
+						<td>建筑面积</td>
+						<td colspan="3" class="jzmj">152.62</td>
+					</tr>
+					<tr>
+						<td>抵押登记</td>
+						<td class="dydj">是</td>
+						<td>查封登记</td>
+						<td class="cfdj">否</td>
+					</tr>
+					<tr>
+						<td>异议登记</td>
+						<td class="yydj">否</td>
+						<td>限制登记</td>
+						<td class="xzdj">否</td>
+					</tr>
+					<tr>
+						<td>证书是否有效</td>
+						<td colspan="3" class="sfyx">有效</td>
+					</tr>
+					<tr>
+						<td rowspan="3">土地状况</td>
+					</tr>
+					<tr>
+						<td>权利性质</td>
+						<td colspan="3" class="qlxz">出让</td>
+					</tr>
+					<tr>
+						<td>使用期限</td>
+						<td colspan="3" class="syqx">2018-01-22至2088-01-21</td>
+					</tr>
+				</tbody>
+			</table>
+			<p style="font-size: 21px; float: right;">查询时间：<label class="year"> 2023 </label>年<label class="month"> 1
+				</label>月<label class="day"> 27 </label>日
+				<label class="hours"> 23 </label>时<label class="minutes"> 3 </label>分<label
+					class="milliseconds"></label>秒
 			</p>
 		</div>
 	</div>
 
-
+</body>
 <script type="text/javascript">
-function showFht(){
-	$("#fht").show();
-	$("#zdt").hide();
-	$("#qszt").hide();
-	$("#btnFHT").css("background","#EF4444");
-	$("#btnZDT").css("background","#fafafa");
-	$("#btnQSZT").css("background","#fafafa");
-}
-
-function showZdt(){
-	$("#fht").hide();
-	$("#zdt").show();
-	$("#qszt").hide();
-	$("#btnZDT").css("background","#EF4444");
-	$("#btnFHT").css("background","#fafafa");
-	$("#btnQSZT").css("background","#fafafa");
-}
-function showQszt(){
-	$("#fht").hide();
-	$("#zdt").hide();
-	$("#qszt").show();
-	$("#btnZDT").css("background","#fafafa");
-	$("#btnFHT").css("background","#fafafa");
-	$("#btnQSZT").css("background","#EF4444");
-}
-function getBDCDYID(){
-	var zsid = $("#zsid").val();
-	var qhmc = 'BDCLL';
-	if(zsid && zsid!=""){
-		$.ajax({
-			url : "/realestate/app/zsewm/qx/getBDCDYIDByZSID",
-			data : {"zsid":zsid,"qhmc":qhmc},
-			method : 'post',
-			dataType : "json",
-			success : function(data) {
-				console.log(data);	
-				var fhthtml = '';
-				var zdthtml = '';
-				if(data.hShow&&data.hShow=="show"){
-					for(var i = 0;i<data.h.length;i++){
-						fhthtml+='<img src="/realestate/app/zsewm/qx/getImg?bdcdyid='+ data.h[i] +'&qhmc=+'+qhmc+'"/></br></br>';
-						
-					}
-					$("#fht").html(fhthtml);
-				}else{
-					$("#fht").html("<div align='center'><font size='25px'>房产分户图将在领证之日起三个工作日内上传，请稍后...</font></div>");
-				}
-				if(data.zdShow&&data.zdShow=="show"){
-					for(var i = 0;i<data.zd.length;i++){
-						zdthtml+='<img src="/realestate/app/zsewm/qx/getImg?bdcdyid='+ data.zd[i] +'&qhmc=+'+qhmc+'"/></br></br>';
-						
-					}
-					$("#zdt").html(zdthtml);
-				}else{
-					$("#zdt").html("<div align='center'><font size='25px'>宗地图将在领证之日起三个工作日内上传，请稍后...</font></div>");
-				}
-				var myDate = new Date(); 
-				//获取当前年
-				var year=myDate.getFullYear();
-
-		    	//获取当前月
-		    	var month=myDate.getMonth()+1;
-		    	
-		    	var hours = myDate.getHours();
-		    	var minutes = myDate.getMinutes();
-		    	var seconds = myDate.getSeconds();
-
-		  	 	//获取当前日
-		   		var day=myDate.getDate();
-			    $(".year").text(" "+year+" ");
-			    $(".month").text(" "+month+" ");
-			    $(".day").text(" "+day+" ");
-			    $(".hours").text(" "+hours+" ");
-			    $(".minutes").text(" "+minutes+" ");
-			    $(".seconds").text(" "+seconds+" ");
-			    var json = data.zsInfo;
-			    for ( var key in json) {
-					$("."+key).text(json[key]);
-					if(key=="sfyx"){
-						if(json[key]=="1"){
-							$("."+key).text("有效");
-						}else{
-							$("."+key).text("无效");
-							$("."+key).css("color","red");
-						}
-					}
-
-				}
-			}
-		});
-	}else{
-		alert("zsid is null");
+	function showFht() {
+		$("#fht").show();
+		$("#zdt").hide();
+		$("#qszt").hide();
+		$("#btnFHT").css("background", "#EF4444");
+		$("#btnZDT").css("background", "#fafafa");
+		$("#btnQSZT").css("background", "#fafafa");
 	}
-}
-function getQSZTXX(){
-	var zsid = $("#zsid").val();
-	if(zsid && zsid!=""){
-		$.ajax({
-			url : "../../app/zsewm/qx/getQSZTXXByZSID",
-			data : {"zsid":zsid},
-			method : 'post',
-			dataType : "json",
-			success : function(data) {
-					
+
+	function showZdt() {
+		$("#fht").hide();
+		$("#zdt").show();
+		$("#qszt").hide();
+		$("#btnZDT").css("background", "#EF4444");
+		$("#btnFHT").css("background", "#fafafa");
+		$("#btnQSZT").css("background", "#fafafa");
+	}
+	function showQszt() {
+		$("#fht").hide();
+		$("#zdt").hide();
+		$("#qszt").show();
+		$("#btnZDT").css("background", "#fafafa");
+		$("#btnFHT").css("background", "#fafafa");
+		$("#btnQSZT").css("background", "#EF4444");
+	}
+	function getBDCDYID() {
+		var myDate = new Date();
+		//获取当前年
+		var year = myDate.getFullYear();
+
+		//获取当前月
+		var month = myDate.getMonth() + 1;
+
+		var hours = myDate.getHours();
+		var minutes = myDate.getMinutes();
+		var seconds = myDate.getSeconds();
+
+		//获取当前日
+		var day = myDate.getDate();
+		$(".year").text(" " + year + " ");
+		$(".month").text(" " + month + " ");
+		$(".day").text(" " + day + " ");
+		$(".hours").text(" " + hours + " ");
+		$(".minutes").text(" " + minutes + " ");
+		$(".seconds").text(" " + seconds + " ");
+		var zsid = $("#zsid").val();
+		var qhmc = 'BDCLL';
+		if (zsid && zsid != "") {
+			$.ajax({
+				url: "/realestate/app/zsewm/qx/getBDCDYIDByZSID",
+				data: { "zsid": zsid, "qhmc": qhmc },
+				method: 'post',
+				dataType: "json",
+				success: function (data) {
+					console.log(data);
+					var fhthtml = '';
+					var zdthtml = '';
+					if (data.hShow && data.hShow == "show") {
+						for (var i = 0; i < data.h.length; i++) {
+							fhthtml += '<img src="picture/284a998b3d874066a4afffef9e75187c.gif' + data.h[i] + '&qhmc=+' + qhmc + '"/></br></br>';
+
+						}
+						$("#fht").html(fhthtml);
+					} else {
+						$("#fht").html("<div align='center'><font size='25px'>房产分户图将在领证之日起三个工作日内上传，请稍后...</font></div>");
+					}
+					if (data.zdShow && data.zdShow == "show") {
+						for (var i = 0; i < data.zd.length; i++) {
+							zdthtml += '<img src="picture/284a998b3d874066a4afffef9e75187c.gif' + data.zd[i] + '&qhmc=+' + qhmc + '"/></br></br>';
+
+						}
+						$("#zdt").html(zdthtml);
+					} else {
+						$("#zdt").html("<div align='center'><font size='25px'>宗地图将在领证之日起三个工作日内上传，请稍后...</font></div>");
+					}
+					var json = data.zsInfo;
+					for (var key in json) {
+						$("." + key).text(json[key]);
+						if (key == "sfyx") {
+							if (json[key] == "1") {
+								$("." + key).text("有效");
+							} else {
+								$("." + key).text("无效");
+								$("." + key).css("color", "red");
+							}
+						}
+
+					}
 				}
 			});
+		} else {
+			alert("zsid is null");
+		}
 	}
-}
-getBDCDYID();
+	function getQSZTXX() {
+		var zsid = $("#zsid").val();
+		if (zsid && zsid != "") {
+			$.ajax({
+				url: "../../app/zsewm/qx/getQSZTXXByZSID",
+				data: { "zsid": zsid },
+				method: 'post',
+				dataType: "json",
+				success: function (data) {
+
+				}
+			});
+		}
+	}
+	getBDCDYID();
 </script>
-</body></html>
+
+</html>
